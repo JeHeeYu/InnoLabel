@@ -28,4 +28,15 @@ ApplicationWindow {
         width: parent.width
         height: parent.height - menu.height
     }
+
+    Item {
+        id: keyHandler
+        focus: true
+        anchors.fill: parent
+
+        Keys.onPressed: {
+            keyboardHandler.onKeyPressed(event.text)
+            event.accepted = true
+        }
+    }
 }
